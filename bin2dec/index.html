@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bin2Dec | App Ideas Collection</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="w-screen h-screen bg-gray-100 flex items-center justify-center">
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4">Binary to Decimal Converter</h1>
+        <form id="bin2dec-form">
+          <label class="block mb-2" for="binary-input"
+            >Enter binary number (up to 8 bits):</label
+          >
+          <input
+            class="border border-gray-300 rounded px-3 py-2 w-full mb-4"
+            type="text"
+            id="binary-input"
+            maxlength="8"
+            placeholder="e.g., 10101010"
+            oninput="check()"
+            onkeydown="keypress(event)"
+          />
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:opacity-50"
+            type="button"
+            onclick="convert()"
+            id="convert-button"
+          >
+            Convert
+          </button>
+          <div id="error" class="mt-2 text-lg font-semibold text-red-500"></div>
+          <div id="result" class="mt-4 text-lg font-semibold"></div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
