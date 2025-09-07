@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Radius Previewer | App Ideas Collection</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen gap-8 bg-gray-100 p-8"
+  >
+    <div class="w-96 h-96 bg-blue-500" id="br-box"></div>
+    <div class="text-center">
+      <p class="text-2xl font-semibold">Border Radius Previewer</p>
+      <p class="text-gray-600">Border radius: <span id="br-text"></span></p>
+    </div>
+    <div class="w-full max-w-2xl bg-white p-6 rounded-lg shadow-lg">
+      <h3 class="text-lg font-semibold mb-4">Adjust Border Radius</h3>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-2">Top-Left</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            id="tl"
+            class="w-full"
+            oninput="updateBorderRadius()"
+          />
+          <span id="tl-value" class="text-sm text-gray-600">50%</span>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-2">Top-Right</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="75"
+            id="tr"
+            class="w-full"
+            oninput="updateBorderRadius()"
+          />
+          <span id="tr-value" class="text-sm text-gray-600">75%</span>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-2">Bottom-Right</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="25"
+            id="br"
+            class="w-full"
+            oninput="updateBorderRadius()"
+          />
+          <span id="br-value" class="text-sm text-gray-600">25%</span>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-2">Bottom-Left</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            id="bl"
+            class="w-full"
+            oninput="updateBorderRadius()"
+          />
+          <span id="bl-value" class="text-sm text-gray-600">0%</span>
+        </div>
+      </div>
+      <div class="mt-6">
+        <h4 class="text-md font-semibold mb-2">Generated CSS</h4>
+        <textarea
+          id="css-output"
+          class="w-full h-20 p-2 border border-gray-300 rounded"
+          readonly
+        ></textarea>
+        <button
+          id="copy-btn"
+          class="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          onclick="copyCSS()"
+        >
+          Copy CSS
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script src="../../assets/js/footer.js"></script>
+</html>
