@@ -1,0 +1,10 @@
+{
+  "name": "app-ideas-collection",
+  "version": "1.0.0",
+  "description": "A collection of small web apps",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "author": "p55d2k",
+  "license": "MIT"
+}
