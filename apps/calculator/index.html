@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator | App Ideas Collection</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+      }
+      .btn {
+        background-color: #505050;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .btn:hover {
+        background-color: #666;
+      }
+      .btn.operation {
+        background-color: #ff9500;
+      }
+      .btn.operation:hover {
+        background-color: #ffb340;
+      }
+      .btn.zero {
+        border-radius: 40px;
+        width: 160px;
+        justify-content: flex-start;
+        padding-left: 24px;
+      }
+      .btn.equals {
+        background-color: #ff9500;
+      }
+      .btn.equals:hover {
+        background-color: #ffb340;
+      }
+      .btn.special {
+        background-color: #a6a6a6;
+        color: #000;
+      }
+      .btn.special:hover {
+        background-color: #c8c8c8;
+      }
+      #display {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        font-size: 48px;
+        font-weight: 300;
+        text-align: right;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="../../assets/js/header.js"></script>
+    <div class="container mx-auto p-4 max-w-sm select-none">
+      <div class="bg-black p-4 rounded-lg">
+        <input type="text" id="display" class="w-full" readonly />
+        <div class="grid grid-cols-4 gap-4">
+          <button class="btn special" id="clear" onclick="clearLast()">C</button>
+          <button class="btn special" id="negate" onclick="negateNumber()">+/-</button>
+          <button class="btn special" id="ac" onclick="clearAll()">AC</button>
+          <button class="btn operation" data-value="/" onclick="appendValue('/')">÷</button>
+
+          <button class="btn" data-value="7" onclick="appendValue('7')">7</button>
+          <button class="btn" data-value="8" onclick="appendValue('8')">8</button>
+          <button class="btn" data-value="9" onclick="appendValue('9')">9</button>
+          <button class="btn operation" data-value="*" onclick="appendValue('*')">×</button>
+
+          <button class="btn" data-value="4" onclick="appendValue('4')">4</button>
+          <button class="btn" data-value="5" onclick="appendValue('5')">5</button>
+          <button class="btn" data-value="6" onclick="appendValue('6')">6</button>
+          <button class="btn operation" data-value="-" onclick="appendValue('-')">−</button>
+
+          <button class="btn" data-value="1" onclick="appendValue('1')">1</button>
+          <button class="btn" data-value="2" onclick="appendValue('2')">2</button>
+          <button class="btn" data-value="3" onclick="appendValue('3')">3</button>
+          <button class="btn operation" data-value="+" onclick="appendValue('+')">+</button>
+
+          <button class="btn zero col-span-2" data-value="0" onclick="appendValue('0')">0</button>
+          <button class="btn" data-value="." onclick="appendValue('.')">.</button>
+          <button class="btn equals" id="equals" onclick="calculateResult()">=</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script src="../../assets/js/footer.js"></script>
+</html>
